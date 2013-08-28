@@ -7,26 +7,16 @@
 //
 
 #import "xctool_135Tests.h"
+#import "AFNetworking.h"
+#define EXP_SHORTHAND
+#import "Expecta.h"
 
 @implementation xctool_135Tests
 
-- (void)setUp
-{
-    [super setUp];
-    
-    // Set-up code here.
-}
-
-- (void)tearDown
-{
-    // Tear-down code here.
-    
-    [super tearDown];
-}
-
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in xctool_135Tests");
+    AFHTTPClient *client = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:@"http://example.com"]];
+    expect(client).notTo.beNil();
 }
 
 @end
